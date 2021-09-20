@@ -7,6 +7,7 @@ import {
   NavigationContainer,
   Button,
   HamburgerButton,
+  MobileMenuContainer,
 } from "./styles/Header";
 
 const Header = () => {
@@ -33,6 +34,22 @@ const Header = () => {
       <HamburgerButton onClick={handleClick} clicked={click}>
         <span />
       </HamburgerButton>
+
+      {/* when reach mobile viewport */}
+      <MobileMenuContainer clicked={click}>
+        <a href="#home" onClick={() => handleClick()}>
+          Home
+        </a>
+        <a href="#aout" onClick={() => handleClick()}>
+          About Me
+        </a>
+        <a href="#services" onClick={() => handleClick()}>
+          Services
+        </a>
+        <a href="#contact" onClick={() => handleClick()}>
+          <Button type="button">Contact Me</Button>
+        </a>
+      </MobileMenuContainer>
     </HeaderContainer>
   );
 };

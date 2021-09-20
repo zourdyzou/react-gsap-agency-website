@@ -5,6 +5,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  // position: relative;
   padding: 1rem 5rem;
   background-color: var(--nav);
   color: var(--white);
@@ -128,5 +129,35 @@ export const HamburgerButton = styled.button`
   &::after {
     top: ${(props) => (props.clicked ? "0" : "0.5rem")};
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
+  }
+`;
+
+export const MobileMenuContainer = styled.div`
+  display: none;
+  @media only Screen and (max-width: 48em) {
+    display: flex;
+  }
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  overflow-x: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  opacity: ${(props) => (props.clicked ? "1" : 0)};
+  visibility: ${(props) => (props.clicked ? "visible" : "hidden")};
+  transition: all 0.5s;
+  z-index: -10;
+  background-color: rgb(53 53 63 / 95%);
+  border-radius: 20px;
+  margin: 0.5rem;
+  a {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 1.5rem;
+    cursor: pointer;
   }
 `;
