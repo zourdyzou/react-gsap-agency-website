@@ -1,20 +1,29 @@
 import logo from "../../assets/logo.svg";
 
+import {
+  HeaderContainer,
+  LogoContainer,
+  NavigationContainer,
+  Button,
+} from "./styles/Header";
+
 const Header = () => {
   return (
-    <header>
-      <div>
+    <HeaderContainer>
+      <LogoContainer>
         <img src={logo} alt="logo RustyMud" />
         <h3>RustyMud</h3>
-      </div>
+      </LogoContainer>
 
-      <nav>
+      <NavigationContainer>
         <a href="#home">Home</a>
         <a href="#aout">About Me</a>
         <a href="#services">Services</a>
-        <a href="#contact">Contact Me</a>
-      </nav>
-    </header>
+        <a href="#contact">
+          <Button type="button">Contact Me</Button>
+        </a>
+      </NavigationContainer>
+    </HeaderContainer>
   );
 };
 
