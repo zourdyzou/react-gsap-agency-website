@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from "../../assets/logo.svg";
 
 import {
@@ -5,9 +6,14 @@ import {
   LogoContainer,
   NavigationContainer,
   Button,
+  HamburgerButton,
 } from "./styles/Header";
 
 const Header = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick((click) => !click);
+
   return (
     <HeaderContainer>
       <LogoContainer>
@@ -23,6 +29,10 @@ const Header = () => {
           <Button type="button">Contact Me</Button>
         </a>
       </NavigationContainer>
+
+      <HamburgerButton onClick={handleClick} clicked={click}>
+        <span />
+      </HamburgerButton>
     </HeaderContainer>
   );
 };

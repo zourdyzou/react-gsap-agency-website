@@ -11,6 +11,13 @@ export const HeaderContainer = styled.header`
 
   position: relative;
   z-index: 500;
+
+  @media only Screen and (max-width: 64em) {
+    padding: 0.5rem 3rem;
+  }
+  @media only Screen and (max-width: 40em) {
+    padding: 0.5rem 1.5rem;
+  }
 `;
 
 export const LogoContainer = styled.a`
@@ -31,6 +38,10 @@ export const NavigationContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s;
+  @media only Screen and (max-width: 48em) {
+    display: none;
+  }
 
   a {
     font-weight: 600;
@@ -72,5 +83,50 @@ export const Button = styled.button`
 
   &:focus {
     transform: scale(0.9);
+  }
+  @media only Screen and (max-width: 40em) {
+    font-size: 1.2rem;
+    &:hover {
+      transform: none;
+    }
+    &:focus {
+      transform: none;
+    }
+  }
+`;
+
+export const HamburgerButton = styled.button`
+  position: relative;
+  background-color: transparent;
+  width: 2rem;
+  height: 2px;
+  cursor: pointer;
+  display: none;
+
+  @media only Screen and (max-width: 48em) {
+    display: inline-block;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: var(--white);
+    width: 2rem;
+    height: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: ${(props) => (props.clicked ? "0" : "-0.5rem")};
+    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+  }
+
+  &::after {
+    top: ${(props) => (props.clicked ? "0" : "0.5rem")};
+    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 `;
