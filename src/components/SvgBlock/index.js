@@ -1,7 +1,15 @@
-// This is SvgBlock component, It will render svgs like in the services section.
+import React from "react";
 
-const SvgBlock = () => {
-  return <div>SvgBlock Component</div>;
+import { RightBlock } from "./styles/SvgBlock";
+
+const SvgBlock = ({ svg }) => {
+  const SvgIcon = require(`../../assets/${svg}`).default;
+
+  return (
+    <RightBlock>
+      <img src={SvgIcon} alt="right block content svg services" />
+    </RightBlock>
+  );
 };
 
 export default SvgBlock;
