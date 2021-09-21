@@ -26,6 +26,8 @@ export const Hand = styled.div`
   position: absolute;
   bottom: -1rem;
   right: 0;
+
+  transform: rotate(-20deg);
   @media only Screen and (max-width: 40em) {
     display: none;
   }
@@ -61,7 +63,12 @@ export const SectionTitle = styled.div`
 
 export const Title = styled.h1`
   font-size: 2rem;
+
   display: inline-block;
+
+  @media (min-width: 1800px) {
+    font-size: 3rem;
+  }
 `;
 
 export const CurvedLine = styled.div`
